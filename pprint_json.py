@@ -11,9 +11,9 @@ def load_data(filepath):
     with open(filepath, encoding="utf8") as json_file:
         return json.load(json_file)
 
-def pretty_print_json(data):
+def pretty_print_json(data_from_json):
     '''takes data, prints to console in a readable format'''
-    pprint(data)
+    pprint(data_from_json)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
     while True:
         json_path = input("Укажите путь к существующему файлу json: ")
-        data = load_data(json_path)
-        if data is not None:
+        data_from_json = load_data(json_path)
+        if data_from_json is not None:
             break
 
-    pretty_print_json(data)
+    pretty_print_json(data_from_json)
